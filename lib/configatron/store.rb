@@ -38,6 +38,7 @@ class Configatron
         store(key, val)
       end
       if ::Configatron::Proc === val
+        @method_missing = false
         val = val.call
       end
       return val
